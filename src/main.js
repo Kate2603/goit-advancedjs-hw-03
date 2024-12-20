@@ -28,6 +28,10 @@ form.addEventListener('submit', async event => {
     gallery.refresh(); // Update gallery
   } catch (error) {
     console.error('Error:', error);
+    iziToast.error({
+      title: 'Error',
+      message: 'Failed to fetch images. Please try again later.',
+    });
   } finally {
     hideLoader(); // Hide loading indicator
   }
@@ -35,10 +39,10 @@ form.addEventListener('submit', async event => {
 
 const showLoader = () => {
   const loader = document.getElementById('loader');
-  loader.style.display = 'block'; // Show indicator
+  loader.style.display = 'flex'; // Show indicator
 };
 
 const hideLoader = () => {
   const loader = document.getElementById('loader');
-  loader.style.display = 'none'; // Hide indicator
+  loader.style.display = 'none '; // Hide indicator
 };
